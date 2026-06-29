@@ -1,414 +1,311 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Around The Bend｜夕方受取予約</title>
-
-  <style>
-
-    body {
-
-      margin: 0;
-
-      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-
-      background: #fffaf2;
-
-      color: #2f1f16;
-
-    }
-
-    .page {
-
-      max-width: 720px;
-
-      margin: 0 auto;
-
-      padding: 34px 18px 48px;
-
-      text-align: center;
-
-    }
-
-    .logo {
-
-      font-family: "Brush Script MT", cursive;
-
-      font-size: 52px;
-
-      font-weight: 700;
-
-      color: #111;
-
-      margin-bottom: 22px;
-
-      line-height: 1.1;
-
-    }
-
-    .line {
-
-      height: 1px;
-
-      background: #c8a978;
-
-      margin: 0 auto 28px;
-
-      width: 82%;
-
-    }
-
-    h1 {
-
-      font-size: 38px;
-
-      letter-spacing: 0.12em;
-
-      margin: 0 0 12px;
-
-      color: #351f12;
-
-    }
-
-    .thanks {
-
-      font-size: 20px;
-
-      margin-bottom: 24px;
-
-    }
-
-    .notice {
-
-      background: #f3e8da;
-
-      border-radius: 18px;
-
-      padding: 22px 14px;
-
-      font-size: 21px;
-
-      line-height: 1.7;
-
-      margin-bottom: 24px;
-
-    }
-
-    .btn {
-
-      width: 100%;
-
-      border: none;
-
-      border-radius: 16px;
-
-      padding: 22px 16px;
-
-      font-size: 26px;
-
-      font-weight: bold;
-
-      cursor: pointer;
-
-      margin: 14px 0;
-
-      box-sizing: border-box;
-
-    }
-
-    .copy-btn {
-
-      background: linear-gradient(90deg, #b48a66, #c9a27f);
-
-      color: #fff;
-
-      box-shadow: 0 6px 14px rgba(90, 56, 34, 0.18);
-
-    }
-
-    .line-btn {
-
-      background: #fff;
-
-      color: #1c7f2e;
-
-      border: 3px solid #2ba54a;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 16px;
-
-      text-decoration: none;
-
-    }
-
-    .line-icon {
-
-      width: 54px;
-
-      height: 54px;
-
-      border-radius: 12px;
-
-    }
-
-    .message {
-
-      display: none;
-
-      background: #fff2cc;
-
-      color: #6b4a1f;
-
-      border: 1px solid #e5c878;
-
-      border-radius: 12px;
-
-      padding: 14px;
-
-      margin: 16px 0;
-
-      font-size: 18px;
-
-      font-weight: bold;
-
-    }
-
-    .dash {
-
-      border-top: 2px dashed #d0b38c;
-
-      margin: 30px 0 20px;
-
-    }
-
-    .subtext {
-
-      font-size: 18px;
-
-      line-height: 1.7;
-
-      margin-bottom: 22px;
-
-    }
-
-    .template-title {
-
-      display: inline-block;
-
-      background: #eadcca;
-
-      border-radius: 16px;
-
-      padding: 10px 28px;
-
-      font-size: 20px;
-
-      font-weight: bold;
-
-      margin-bottom: -12px;
-
-      position: relative;
-
-      z-index: 2;
-
-    }
-
-    .template-box {
-
-      text-align: left;
-
-      background: #fffdf8;
-
-      border: 2px solid #e4d1b8;
-
-      border-radius: 18px;
-
-      padding: 28px 24px;
-
-      font-size: 20px;
-
-      line-height: 1.65;
-
-      white-space: pre-wrap;
-
-      min-height: 300px;
-
-    }
-
-    .footer {
-
-      margin-top: 34px;
-
-      font-size: 15px;
-
-      color: #6f5a46;
-
-    }
-
-    @media (max-width: 520px) {
-
-      .logo {
-
-        font-size: 38px;
-
-      }
-
-      h1 {
-
-        font-size: 30px;
-
-      }
-
-      .notice {
-
-        font-size: 18px;
-
-      }
-
-      .btn {
-
-        font-size: 21px;
-
-        padding: 19px 12px;
-
-      }
-
-      .line-icon {
-
-        width: 44px;
-
-        height: 44px;
-
-      }
-
-      .template-box {
-
-        font-size: 18px;
-
-        padding: 24px 18px;
-
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Around The Bend｜夕方受取予約</title>
+<style>
+:root{
+  --bg:#fffaf3;
+  --ink:#33231a;
+  --brown:#9d4938;
+  --gold:#d8b86f;
+  --green:#2f6b43;
+  --soft:#fffdf8;
+  --cream:#f8efe5;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Hiragino Sans","Yu Gothic","Yu Gothic UI",sans-serif;
+}
+.wrap{
+  max-width:760px;
+  margin:auto;
+  padding:24px 18px 50px;
+}
+.logo-wrap{
+  text-align:center;
+  margin:2px 0 18px;
+}
+.logo-symbol{
+  display:block;
+  width:74px;
+  max-width:26%;
+  height:auto;
+  margin:0 auto 6px;
+}
+.logo-name{
+  display:block;
+  width:210px;
+  max-width:62%;
+  height:auto;
+  margin:0 auto;
+}
+.logo-sub{
+  margin-top:4px;
+  font-weight:bold;
+  font-size:15px;
+  color:#314b36;
+  letter-spacing:.04em;
+}
+h1{
+  text-align:center;
+  font-size:34px;
+  letter-spacing:.1em;
+  margin:8px 0;
+}
+.lead{
+  text-align:center;
+  font-size:22px;
+  line-height:1.6;
+  color:#a77a2d;
+  font-weight:bold;
+  margin:8px 0 10px;
+}
+.note{
+  text-align:center;
+  font-size:18px;
+  line-height:1.7;
+  color:#405846;
+}
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:18px;
+}
+.box{
+  border:1.5px solid var(--gold);
+  border-radius:16px;
+  padding:18px;
+  background:var(--soft);
+}
+.box h2{
+  text-align:center;
+  margin:0 0 14px;
+  font-size:24px;
+  border-bottom:8px solid #d8c05a;
+  display:inline-block;
+}
+.center{text-align:center}
+.items{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 24px;
+  font-size:22px;
+  line-height:1.7;
+  margin:auto;
+  max-width:560px;
+}
+.section-title{
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+  margin:28px 0 10px;
+}
+.line-section{
+  margin-top:30px;
+  padding-top:24px;
+  border-top:2px dashed #d0b38c;
+}
+.steps{
+  background:var(--cream);
+  border-radius:16px;
+  padding:18px;
+  line-height:1.8;
+  font-size:18px;
+}
+.btn{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:20px 12px;
+  font-size:24px;
+  font-weight:bold;
+  margin:12px 0;
+  cursor:pointer;
+}
+.copy{
+  background:var(--brown);
+  color:white;
+}
+.linebtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  box-sizing:border-box;
+  text-decoration:none;
+  border:3px solid #28a745;
+  color:#188236;
+  background:#fff;
+}
+.lineicon{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+}
+.msg{
+  display:none;
+  background:#fff1c9;
+  border:1px solid var(--gold);
+  border-radius:12px;
+  padding:13px;
+  text-align:center;
+  font-weight:bold;
+  margin:12px 0;
+}
+.template-title{
+  text-align:center;
+  margin:24px 0 -10px;
+  position:relative;
+  z-index:1;
+}
+.template-title span{
+  background:#eadcca;
+  border-radius:16px;
+  padding:9px 24px;
+  font-weight:bold;
+  font-size:20px;
+}
+.template{
+  white-space:pre-wrap;
+  background:var(--soft);
+  border:2px solid #e2cfb5;
+  border-radius:18px;
+  padding:28px 22px;
+  font-size:20px;
+  line-height:1.65;
+}
+.small{
+  font-size:15px;
+  color:#6f5a46;
+  text-align:center;
+  margin-top:24px;
+}
+@media(max-width:600px){
+  .wrap{padding:20px 14px 42px;}
+  .logo-symbol{width:68px;max-width:28%;}
+  .logo-name{width:190px;max-width:68%;}
+  h1{font-size:28px}
+  .lead{font-size:20px}
+  .two{grid-template-columns:1fr}
+  .items{grid-template-columns:1fr;font-size:20px}
+  .btn{font-size:20px}
+  .template{font-size:18px}
+}
+</style>
 </head>
 
 <body>
+<div class="wrap">
 
-  <main class="page">
+  <div class="logo-wrap">
+    <img class="logo-symbol" src="logo.png" alt="Around The Bend シンボルマーク">
+    <img class="logo-name" src="logo_text.png" alt="Around The Bend">
+    <div class="logo-sub">米粉100%のパン</div>
+  </div>
 
-    <div class="logo">Around The Bend</div>
+  <h1>夕方受取予約のご案内</h1>
 
-    <div class="line"></div>
+  <p class="lead">16:00〜18:00 受取限定</p>
 
-    <h1>夕方受取予約</h1>
+  <p class="note">
+    ご予約は受取希望日の<strong>前日17時まで</strong>にお願いいたします。<br>
+    店頭・LINEのどちらも<strong>前払い制</strong>となっております。
+  </p>
 
-    <div class="thanks">ご予約ありがとうございます。</div>
-
-    <div class="notice">
-
-      予約テンプレートをコピーして、<br>
-
-      LINEトークへ貼り付けて送信してください。
-
+  <div class="two">
+    <div class="box center">
+      <h2>店頭でのご予約</h2>
+      <p style="font-size:18px;line-height:1.8;">
+        店頭にてご予約を承ります。<br><br>
+        お支払い方法<br>
+        現金またはPayPayで<br>
+        お支払いください。
+      </p>
     </div>
 
-    <button class="btn copy-btn" onclick="copyTemplate()">
+    <div class="box">
+      <div class="center"><h2>LINEでのご予約</h2></div>
+      <ol style="font-size:18px;line-height:1.8;padding-left:22px;">
+        <li>LINEからメッセージを送信</li>
+        <li>スタッフが金額のお知らせとPayPayの支払先を送信</li>
+        <li>PayPayでお支払い</li>
+        <li>お支払い確認後、ご予約確定</li>
+      </ol>
+    </div>
+  </div>
 
-      📋 予約テンプレートをコピー
+  <div class="section-title">ご予約いただける商品</div>
+  <div class="items">
+    <div>・プレーン</div>
+    <div>・枝豆チーズ</div>
+    <div>・ダブルチョコ</div>
+    <div>・塩バター</div>
+    <div>・クランベリーチーズ</div>
+    <div>・塩バターコーン</div>
+  </div>
 
-    </button>
+  <p class="note">ご不明な点はお気軽にスタッフまでお声かけください。</p>
 
-    <div id="message" class="message">
+  <div class="line-section">
+    <div class="section-title">LINE予約の方はこちら</div>
 
+    <div class="steps">
+      ①「予約テンプレートをコピー」を押す<br>
+      ②「LINEトークを開く」を押す<br>
+      ③ トーク画面左下のキーボードマークを押す<br>
+      ④ コピーした内容を貼り付けて送信してください
+    </div>
+
+    <button class="btn copy" onclick="copyTemplate()">📋 予約テンプレートをコピー</button>
+
+    <div id="message" class="msg">
       コピーしました！LINEトークへ貼り付けて送信してください。
-
     </div>
 
-    <a class="btn line-btn" href="https://lin.ee/vqrp0bg" target="_blank">
-
-      <img class="line-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
-
+    <a class="btn linebtn" href="https://lin.ee/vqrp0bg" target="_blank">
+      <img class="lineicon" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
       LINEトークを開く
-
     </a>
 
-    <div class="dash"></div>
+    <p class="note">コピーできない場合は、下のテンプレートを長押ししてコピーしてください。</p>
 
-    <div class="subtext">
+    <div class="template-title"><span>🌿 予約テンプレート 🌿</span></div>
 
-      コピーできない場合は、<br>
-
-      下のテンプレートを長押ししてコピーしてください。
-
-    </div>
-
-    <div class="template-title">🌿 予約テンプレート 🌿</div>
-
-    <div id="template" class="template-box">受取日：
-
+    <div id="template" class="template">受取日：
 受取時間：
 
 お名前：
-
 電話番号：
 
 【ご注文】
-
 プレーン　　　　　個
-
 ダブルチョコ　　　個
-
 クランベリーチーズ　　個
-
 枝豆チーズ　　　　個
-
 塩バター　　　　　個
-
 塩バターコーン　　個</div>
+  </div>
 
-    <div class="footer">
+  <div class="small">Around The Bend</div>
 
-      Around The Bend
+</div>
 
-    </div>
-
-  </main>
-
-  <script>
-
-    function copyTemplate() {
-
-      const text = document.getElementById("template").innerText;
-
-      navigator.clipboard.writeText(text).then(function () {
-
-        const message = document.getElementById("message");
-
-        message.style.display = "block";
-
-      }).catch(function () {
-
-        alert("コピーできませんでした。下のテンプレートを長押ししてコピーしてください。");
-      });
-
-    }
-
-  </script>
+<script>
+function copyTemplate(){
+  const text = document.getElementById("template").innerText;
+  navigator.clipboard.writeText(text).then(function(){
+    document.getElementById("message").style.display = "block";
+  }).catch(function(){
+    alert("コピーできませんでした。下のテンプレートを長押ししてコピーしてください。");
+  });
+}
+</script>
 
 </body>
-
-</html
+</html>
