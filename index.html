@@ -7,12 +7,15 @@
 <style>
 :root{
   --bg:#fffaf3;
+  --paper:#fffdf8;
   --ink:#33231a;
-  --brown:#9d4938;
+  --brown:#8f4637;
+  --brown2:#b9825d;
   --gold:#d8b86f;
-  --green:#2f6b43;
-  --soft:#fffdf8;
-  --cream:#f8efe5;
+  --green:#1f8f3a;
+  --greenDark:#2f6b43;
+  --greenSoft:#e9f3ec;
+  --line:#e1cdb3;
 }
 *{box-sizing:border-box}
 body{
@@ -22,17 +25,17 @@ body{
   font-family:"Hiragino Sans","Yu Gothic","Yu Gothic UI",sans-serif;
 }
 .wrap{
-  max-width:760px;
+  max-width:780px;
   margin:auto;
-  padding:24px 18px 50px;
+  padding:24px 16px 52px;
 }
 .logo-wrap{
   text-align:center;
-  margin:2px 0 18px;
+  margin:0 0 18px;
 }
 .logo-symbol{
   display:block;
-  width:74px;
+  width:72px;
   max-width:26%;
   height:auto;
   margin:0 auto 6px;
@@ -51,11 +54,30 @@ body{
   color:#314b36;
   letter-spacing:.04em;
 }
+.hero{
+  background:linear-gradient(180deg,#fffdf8 0%,#fbf2e8 100%);
+  border:1.5px solid var(--gold);
+  border-radius:26px;
+  padding:26px 18px;
+  box-shadow:0 10px 24px rgba(70,43,24,.08);
+  text-align:center;
+}
+.hero-label{
+  display:inline-block;
+  background:#2f6b43;
+  color:#fff;
+  padding:7px 18px;
+  border-radius:999px;
+  font-size:15px;
+  font-weight:bold;
+  letter-spacing:.08em;
+  margin-bottom:12px;
+}
 h1{
   text-align:center;
   font-size:34px;
-  letter-spacing:.1em;
-  margin:8px 0;
+  letter-spacing:.08em;
+  margin:4px 0 8px;
 }
 .lead{
   text-align:center;
@@ -68,68 +90,209 @@ h1{
 .note{
   text-align:center;
   font-size:18px;
-  line-height:1.7;
+  line-height:1.75;
   color:#405846;
 }
-.two{
+.notice{
+  margin-top:16px;
+  padding:15px 16px;
+  background:#fff8db;
+  border:1px solid #e7d286;
+  border-radius:18px;
+  font-size:17px;
+  line-height:1.7;
+}
+.section-title{
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+  margin:30px 0 12px;
+}
+.reserve-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
   margin-top:18px;
 }
 .box{
-  border:1.5px solid var(--gold);
-  border-radius:16px;
-  padding:18px;
-  background:var(--soft);
+  border:1.5px solid var(--line);
+  border-radius:22px;
+  padding:20px 18px;
+  background:rgba(255,253,248,.96);
+  box-shadow:0 8px 18px rgba(70,43,24,.05);
 }
 .box h2{
   text-align:center;
-  margin:0 0 14px;
-  font-size:24px;
-  border-bottom:8px solid #d8c05a;
+  margin:0 0 16px;
+  font-size:23px;
+}
+.heading-bar{
   display:inline-block;
+  padding:0 4px 4px;
+  border-bottom:3px solid #d8c05a;
+  line-height:1.1;
 }
 .center{text-align:center}
+.reserve-text{
+  font-size:18px;
+  line-height:1.9;
+  margin:0;
+}
+.pay-line{
+  display:inline-block;
+  margin-top:8px;
+  padding:10px 16px;
+  background:#f7efe4;
+  border-radius:18px;
+  color:#5c4532;
+  line-height:1.75;
+}
+.items-card{
+  background:rgba(255,253,248,.96);
+  border:1.5px solid var(--line);
+  border-radius:22px;
+  padding:18px 18px 14px;
+  box-shadow:0 8px 18px rgba(70,43,24,.05);
+}
 .items{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:0 24px;
-  font-size:22px;
+  gap:6px 24px;
+  font-size:21px;
   line-height:1.7;
   margin:auto;
   max-width:560px;
 }
-.section-title{
-  text-align:center;
-  font-size:26px;
-  font-weight:bold;
-  margin:28px 0 10px;
-}
 .line-section{
-  margin-top:30px;
-  padding-top:24px;
+  margin-top:32px;
+  padding-top:26px;
   border-top:2px dashed #d0b38c;
 }
-.steps{
-  background:var(--cream);
-  border-radius:16px;
-  padding:18px;
-  line-height:1.8;
+.flow-title{
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+  margin:0 0 18px;
+}
+.flow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:16px 0;
+}
+.step{
+  background:#fff;
+  border:1.5px solid #e2cfb5;
+  border-radius:22px;
+  padding:18px 12px;
+  text-align:center;
+  min-height:184px;
+  box-shadow:0 7px 16px rgba(70,43,24,.045);
+}
+.step-num{
+  width:54px;
+  height:54px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#9d4938;
+  color:#fff;
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+.step-icon{
+  font-size:42px;
+  line-height:1;
+  margin-bottom:12px;
+}
+.step-text{
+  font-size:21px;
+  line-height:1.45;
+  font-weight:bold;
+}
+
+/* LINE左下キーボード風の図 */
+.line-keyboard-demo{
+  width:156px;
+  height:104px;
+  margin:0 auto 12px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #d6c6b8;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.52)),
+    linear-gradient(135deg,#b8824b 0%,#e0b574 35%,#b07843 55%,#8d5a38 100%);
+  position:relative;
+}
+.line-keyboard-demo::before{
+  content:"point\A ポイントカード";
+  white-space:pre;
+  position:absolute;
+  top:13px;
+  left:50%;
+  transform:translateX(-50%);
+  width:86px;
+  height:52px;
+  background:rgba(255,255,255,.62);
+  color:#9d4938;
+  border-radius:4px;
+  font-size:12px;
+  line-height:1.6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.line-keyboard-demo::after{
+  content:"メニュー▼";
+  position:absolute;
+  right:12px;
+  bottom:15px;
+  color:#7b5c4b;
+  font-weight:bold;
+  font-size:13px;
+}
+.keyboard-circle{
+  position:absolute;
+  left:15px;
+  bottom:10px;
+  width:44px;
+  height:44px;
+  border:4px solid #9d4938;
+  border-radius:50%;
+  background:rgba(255,255,255,.75);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#6d584b;
+  font-size:22px;
+  z-index:2;
+}
+.keyboard-note{
+  margin:14px 0 6px;
+  padding:17px 16px;
+  border-radius:20px;
+  background:var(--greenSoft);
+  color:#284834;
   font-size:18px;
+  line-height:1.75;
+  text-align:center;
 }
 .btn{
   width:100%;
   border:none;
-  border-radius:14px;
-  padding:20px 12px;
+  border-radius:18px;
+  padding:22px 12px;
   font-size:24px;
   font-weight:bold;
   margin:12px 0;
   cursor:pointer;
+  box-shadow:0 8px 16px rgba(70,43,24,.12);
 }
 .copy{
-  background:var(--brown);
+  background:linear-gradient(90deg,var(--brown),var(--brown2));
   color:white;
 }
 .linebtn{
@@ -139,8 +302,8 @@ h1{
   gap:14px;
   box-sizing:border-box;
   text-decoration:none;
-  border:3px solid #28a745;
-  color:#188236;
+  border:3px solid var(--green);
+  color:var(--green);
   background:#fff;
 }
 .lineicon{
@@ -152,30 +315,32 @@ h1{
   display:none;
   background:#fff1c9;
   border:1px solid var(--gold);
-  border-radius:12px;
-  padding:13px;
+  border-radius:16px;
+  padding:16px;
   text-align:center;
   font-weight:bold;
   margin:12px 0;
+  color:#6b4a1f;
+  line-height:1.7;
 }
 .template-title{
   text-align:center;
-  margin:24px 0 -10px;
+  margin:26px 0 -10px;
   position:relative;
   z-index:1;
 }
 .template-title span{
   background:#eadcca;
-  border-radius:16px;
-  padding:9px 24px;
+  border-radius:999px;
+  padding:9px 28px;
   font-weight:bold;
   font-size:20px;
 }
 .template{
   white-space:pre-wrap;
-  background:var(--soft);
+  background:var(--paper);
   border:2px solid #e2cfb5;
-  border-radius:18px;
+  border-radius:20px;
   padding:28px 22px;
   font-size:20px;
   line-height:1.65;
@@ -192,7 +357,15 @@ h1{
   .logo-name{width:190px;max-width:68%;}
   h1{font-size:28px}
   .lead{font-size:20px}
-  .two{grid-template-columns:1fr}
+  .reserve-grid{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr;gap:10px}
+  .step{min-height:174px;padding:16px 9px}
+  .step-num{width:48px;height:48px;font-size:25px}
+  .step-icon{font-size:38px}
+  .step-text{font-size:18px}
+  .line-keyboard-demo{width:132px;height:92px}
+  .keyboard-circle{width:40px;height:40px}
+  .line-keyboard-demo::after{font-size:11px;right:9px}
   .items{grid-template-columns:1fr;font-size:20px}
   .btn{font-size:20px}
   .template{font-size:18px}
@@ -209,29 +382,32 @@ h1{
     <div class="logo-sub">米粉100%のパン</div>
   </div>
 
-  <h1>夕方受取予約のご案内</h1>
+  <section class="hero">
+    <div class="hero-label">ご予約案内</div>
+    <h1>夕方受取予約</h1>
+    <p class="lead">16:00〜18:00 受取限定</p>
+    <p class="note">
+      ご予約は受取希望日の<strong>前日17時まで</strong>にお願いいたします。<br>
+      店頭・LINEのどちらも<strong>前払い制</strong>となっております。
+    </p>
+    <div class="notice">
+      店頭予約の方は、店頭にてお申し付けください。<br>
+      LINE予約の方は、下のテンプレートをご利用ください。
+    </div>
+  </section>
 
-  <p class="lead">16:00〜18:00 受取限定</p>
-
-  <p class="note">
-    ご予約は受取希望日の<strong>前日17時まで</strong>にお願いいたします。<br>
-    店頭・LINEのどちらも<strong>前払い制</strong>となっております。
-  </p>
-
-  <div class="two">
+  <div class="reserve-grid">
     <div class="box center">
-      <h2>店頭でのご予約</h2>
-      <p style="font-size:18px;line-height:1.8;">
-        店頭にてご予約を承ります。<br><br>
-        お支払い方法<br>
-        現金またはPayPayで<br>
-        お支払いください。
+      <h2><span class="heading-bar">店頭でのご予約</span></h2>
+      <p class="reserve-text">
+        店頭にてご予約を承ります。<br>
+        <span class="pay-line">お支払いは、<br>現金またはPayPayです。</span>
       </p>
     </div>
 
     <div class="box">
-      <div class="center"><h2>LINEでのご予約</h2></div>
-      <ol style="font-size:18px;line-height:1.8;padding-left:22px;">
+      <div class="center"><h2><span class="heading-bar">LINEでのご予約</span></h2></div>
+      <ol style="font-size:18px;line-height:1.8;padding-left:22px;margin:0;">
         <li>LINEからメッセージを送信</li>
         <li>スタッフが金額のお知らせとPayPayの支払先を送信</li>
         <li>PayPayでお支払い</li>
@@ -241,31 +417,59 @@ h1{
   </div>
 
   <div class="section-title">ご予約いただける商品</div>
-  <div class="items">
-    <div>・プレーン</div>
-    <div>・枝豆チーズ</div>
-    <div>・ダブルチョコ</div>
-    <div>・塩バター</div>
-    <div>・クランベリーチーズ</div>
-    <div>・塩バターコーン</div>
+  <div class="items-card">
+    <div class="items">
+      <div>・プレーン</div>
+      <div>・枝豆チーズ</div>
+      <div>・ダブルチョコ</div>
+      <div>・塩バター</div>
+      <div>・クランベリーチーズ</div>
+      <div>・塩バターコーン</div>
+    </div>
   </div>
 
   <p class="note">ご不明な点はお気軽にスタッフまでお声かけください。</p>
 
   <div class="line-section">
-    <div class="section-title">LINE予約の方はこちら</div>
+    <div class="flow-title">LINE予約の方はこちら</div>
 
-    <div class="steps">
-      ①「予約テンプレートをコピー」を押す<br>
-      ②「LINEトークを開く」を押す<br>
-      ③ トーク画面左下のキーボードマークを押す<br>
-      ④ コピーした内容を貼り付けて送信してください
+    <div class="flow">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📋</div>
+        <div class="step-text">テンプレートを<br>コピー</div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">💬</div>
+        <div class="step-text">LINEトークを<br>開く</div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="line-keyboard-demo">
+          <div class="keyboard-circle">⌨</div>
+        </div>
+        <div class="step-text">左下の<br>キーボードを押す</div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-icon">📩</div>
+        <div class="step-text">貼り付けて<br>送信</div>
+      </div>
+    </div>
+
+    <div class="keyboard-note">
+      LINEトーク画面が開いたら、左下のキーボードマークを押すとメッセージを入力できます。
     </div>
 
     <button class="btn copy" onclick="copyTemplate()">📋 予約テンプレートをコピー</button>
 
     <div id="message" class="msg">
-      コピーしました！LINEトークへ貼り付けて送信してください。
+      ✅ コピーしました！<br>
+      次に「LINEトークを開く」を押して、貼り付けて送信してください。
     </div>
 
     <a class="btn linebtn" href="https://lin.ee/vqrp0bg" target="_blank">
@@ -275,7 +479,7 @@ h1{
 
     <p class="note">コピーできない場合は、下のテンプレートを長押ししてコピーしてください。</p>
 
-    <div class="template-title"><span>🌿 予約テンプレート 🌿</span></div>
+    <div class="template-title"><span>予約テンプレート</span></div>
 
     <div id="template" class="template">受取日：
 受取時間：
@@ -293,7 +497,6 @@ h1{
   </div>
 
   <div class="small">Around The Bend</div>
-
 </div>
 
 <script>
@@ -306,6 +509,5 @@ function copyTemplate(){
   });
 }
 </script>
-
 </body>
 </html>
