@@ -154,6 +154,24 @@ h1{
   padding:18px 18px 14px;
   box-shadow:0 8px 18px rgba(70,43,24,.05);
 }
+
+.items div{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+}
+.price{
+  font-weight:bold;
+  color:#6b3e28;
+  white-space:nowrap;
+}
+.price small{
+  font-size:.62em;
+  font-weight:normal;
+  color:#7b6a5a;
+}
+
 .items{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -419,12 +437,12 @@ h1{
   <div class="section-title">ご予約いただける商品</div>
   <div class="items-card">
     <div class="items">
-      <div>・プレーン</div>
-      <div>・ダブルチョコ</div>
-      <div>・クランベリーチーズ</div>
-      <div>・枝豆チーズ</div>
-      <div>・塩バター</div>
-      <div>・塩バターコーン</div>
+      <div>・プレーン <span class="price">¥350 <small>+税</small></span></div>
+      <div>・ダブルチョコ <span class="price">¥390 <small>+税</small></span></div>
+      <div>・クランベリーチーズ <span class="price">¥430 <small>+税</small></span></div>
+      <div>・枝豆チーズ <span class="price">¥430 <small>+税</small></span></div>
+      <div>・塩バター <span class="price">¥380 <small>+税</small></span></div>
+      <div>・塩バターコーン <span class="price">¥430 <small>+税</small></span></div>
     </div>
   </div>
   </div>
