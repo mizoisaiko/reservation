@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Around The Bend｜夕方受取予約</title>
+<title>Around The Bend｜夏限定ご予約</title>
 <style>
 :root{
   --bg:#fffaf3;
@@ -64,7 +64,7 @@ body{
 }
 .hero-label{
   display:inline-block;
-  background:#2f6b43;
+  background:var(--greenDark);
   color:#fff;
   padding:7px 18px;
   border-radius:999px;
@@ -73,19 +73,43 @@ body{
   letter-spacing:.08em;
   margin-bottom:12px;
 }
+.english{
+  margin:2px 0 0;
+  color:var(--brown2);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+  letter-spacing:.12em;
+}
 h1{
   text-align:center;
   font-size:34px;
   letter-spacing:.08em;
-  margin:4px 0 8px;
+  margin:5px 0 8px;
+}
+.summer-emphasis{
+  display:inline-block;
+  color:#2f6b43;
+  font-size:1.18em;
+  font-weight:800;
+  letter-spacing:.12em;
+  margin-bottom:4px;
+  position:relative;
+}
+.summer-emphasis::before,
+.summer-emphasis::after{
+  content:"✦";
+  color:#d8a53a;
+  font-size:.48em;
+  vertical-align:middle;
+  margin:0 8px;
 }
 .lead{
   text-align:center;
-  font-size:22px;
-  line-height:1.6;
-  color:#a77a2d;
-  font-weight:bold;
-  margin:8px 0 10px;
+  font-size:20px;
+  line-height:1.7;
+  color:#5f5147;
+  font-weight:normal;
+  margin:10px 0 12px;
 }
 .note{
   text-align:center;
@@ -151,35 +175,21 @@ h1{
   background:rgba(255,253,248,.96);
   border:1.5px solid var(--line);
   border-radius:22px;
-  padding:18px 18px 14px;
+  padding:22px 20px;
   box-shadow:0 8px 18px rgba(70,43,24,.05);
+  text-align:center;
 }
-
-.items div{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:12px;
-}
-.price{
-  font-weight:bold;
-  color:#6b3e28;
-  white-space:nowrap;
-}
-.price small{
-  font-size:.62em;
-  font-weight:normal;
-  color:#7b6a5a;
-}
-
-.items{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:6px 24px;
+.items-main{
   font-size:21px;
-  line-height:1.7;
-  margin:auto;
-  max-width:560px;
+  font-weight:bold;
+  line-height:1.75;
+  color:#5c4532;
+}
+.items-sub{
+  margin-top:10px;
+  font-size:17px;
+  line-height:1.75;
+  color:#405846;
 }
 .line-section{
   margin-top:32px;
@@ -230,8 +240,6 @@ h1{
   line-height:1.45;
   font-weight:bold;
 }
-
-/* LINE左下キーボード風の図 */
 .line-keyboard-demo{
   width:156px;
   height:104px;
@@ -318,7 +326,6 @@ h1{
   align-items:center;
   justify-content:center;
   gap:14px;
-  box-sizing:border-box;
   text-decoration:none;
   border:3px solid var(--green);
   color:var(--green);
@@ -370,11 +377,13 @@ h1{
   margin-top:24px;
 }
 @media(max-width:600px){
-  .wrap{padding:20px 14px 42px;}
-  .logo-symbol{width:68px;max-width:28%;}
-  .logo-name{width:190px;max-width:68%;}
+  .wrap{padding:20px 14px 42px}
+  .logo-symbol{width:68px;max-width:28%}
+  .logo-name{width:190px;max-width:68%}
+  .english{font-size:18px}
   h1{font-size:28px}
-  .lead{font-size:20px}
+  .summer-emphasis{font-size:1.2em}
+  .lead{font-size:18px}
   .reserve-grid{grid-template-columns:1fr}
   .flow{grid-template-columns:1fr 1fr;gap:10px}
   .step{min-height:174px;padding:16px 9px}
@@ -384,10 +393,56 @@ h1{
   .line-keyboard-demo{width:132px;height:92px}
   .keyboard-circle{width:40px;height:40px}
   .line-keyboard-demo::after{font-size:11px;right:9px}
-  .items{grid-template-columns:1fr;font-size:20px}
   .btn{font-size:20px}
   .template{font-size:18px}
 }
+
+/* Botanical decorations */
+.page-wrap{
+  position:relative;
+  overflow:hidden;
+}
+.botanical{
+  position:absolute;
+  pointer-events:none;
+  opacity:.78;
+  z-index:0;
+}
+.botanical svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.botanical-top{
+  width:150px;
+  top:18px;
+  right:-28px;
+  transform:rotate(8deg);
+}
+.botanical-left{
+  width:115px;
+  top:330px;
+  left:-38px;
+  transform:rotate(-12deg);
+  opacity:.58;
+}
+.botanical-bottom{
+  width:145px;
+  right:-36px;
+  bottom:28px;
+  transform:rotate(165deg);
+  opacity:.5;
+}
+.page-wrap > *:not(.botanical){
+  position:relative;
+  z-index:1;
+}
+@media (max-width:600px){
+  .botanical-top{width:112px;right:-30px;top:10px}
+  .botanical-left{width:88px;left:-34px;top:360px}
+  .botanical-bottom{width:105px;right:-38px;bottom:20px}
+}
+
 </style>
 </head>
 
@@ -401,33 +456,34 @@ h1{
   </div>
 
   <section class="hero">
-    <div class="hero-label">ご予約案内</div>
-    <h1>夕方受取予約</h1>
-    <p class="lead">16:00〜18:00 受取限定</p>
+    <div class="hero-label">9月30日までの期間限定</div>
+    <p class="english">Summer Reservation</p>
+    <h1><span class="summer-emphasis">夏限定</span><br>ご予約承ります</h1>
+    <p class="lead">営業時間内のお好きな時間にお受取りいただけます</p>
     <p class="note">
-      ご予約は受取希望日の<strong>前日17時まで</strong>にお願いいたします。<br>
+      ご予約は受取希望日の<strong>前日16時まで</strong>にお願いいたします。<br>
       店頭・LINEのどちらも<strong>前払い制</strong>となっております。
     </p>
-    <div class="notice">
-      店頭予約の方は、店頭にてお申し付けください。<br>
-      LINE予約の方は、下のテンプレートをご利用ください。
-    </div>
   </section>
 
   <div class="reserve-grid">
     <div class="box center">
       <h2><span class="heading-bar">店頭でのご予約</span></h2>
       <p class="reserve-text">
-        店頭にてご予約を承ります。<br>
-        <span class="pay-line">お支払いは、<br>現金またはPayPayです。</span>
+        スタッフに、ご希望の商品・個数・<br>
+        受取日・受取時間をお伝えください。<br>
+        <span class="pay-line">
+          ご予約時に前払い<br>
+          現金またはPayPay
+        </span>
       </p>
     </div>
 
     <div class="box">
       <div class="center"><h2><span class="heading-bar">LINEでのご予約</span></h2></div>
       <ol style="font-size:18px;line-height:1.8;padding-left:22px;margin:0;">
-        <li>LINEからメッセージを送信</li>
-        <li>スタッフが金額のお知らせとPayPayの支払先を送信</li>
+        <li>下のテンプレートを使って送信</li>
+        <li>スタッフが内容を確認し、合計金額とPayPayのQRコード画面を送信</li>
         <li>PayPayでお支払い</li>
         <li>お支払い確認後、ご予約確定</li>
       </ol>
@@ -436,15 +492,17 @@ h1{
 
   <div class="section-title">ご予約いただける商品</div>
   <div class="items-card">
-    <div class="items">
-      <div>・プレーン <span class="price">¥350 <small>+税</small></span></div>
-      <div>・ダブルチョコ <span class="price">¥390 <small>+税</small></span></div>
-      <div>・クランベリーチーズ <span class="price">¥430 <small>+税</small></span></div>
-      <div>・枝豆チーズ <span class="price">¥430 <small>+税</small></span></div>
-      <div>・塩バター <span class="price">¥380 <small>+税</small></span></div>
-      <div>・塩バターコーン <span class="price">¥430 <small>+税</small></span></div>
+    <div class="items-main">
+      毎週更新する<br>
+      「今週のラインナップ」から<br>
+      お好きな商品をご予約<br>
+      いただけます。
     </div>
-  </div>
+    <div class="items-sub">
+      「今週のラインナップ」は<br>
+      Instagram・LINEでご案内しています。<br>
+      直近の投稿をご確認のうえ、ご予約をお願いいたします。
+    </div>
   </div>
 
   <p class="note">ご不明な点はお気軽にスタッフまでお声かけください。</p>
@@ -476,7 +534,7 @@ h1{
       <div class="step">
         <div class="step-num">4</div>
         <div class="step-icon">📩</div>
-        <div class="step-text">貼り付けて<br>送信</div>
+        <div class="step-text">貼り付けて<br>入力・送信</div>
       </div>
     </div>
 
@@ -488,10 +546,10 @@ h1{
 
     <div id="message" class="msg">
       ✅ コピーしました！<br>
-      次に「LINEトークを開く」を押して、貼り付けて送信してください。
+      次に「LINEトークを開く」を押して、内容を入力して送信してください。
     </div>
 
-    <a class="btn linebtn" href="https://lin.ee/vqrp0bg" target="_blank">
+    <a class="btn linebtn" href="https://lin.ee/vqrp0bg" target="_blank" rel="noopener noreferrer">
       <img class="lineicon" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
       LINEトークを開く
     </a>
@@ -500,19 +558,25 @@ h1{
 
     <div class="template-title"><span>予約テンプレート</span></div>
 
-    <div id="template" class="template">受取日：
+    <div id="template" class="template">【夏限定 ご予約】
+
+受取日：
 受取時間：
 
 お名前：
 電話番号：
 
 【ご注文】
-プレーン　　　　　個
-ダブルチョコ　　　個
-クランベリーチーズ　　個
-枝豆チーズ　　　　個
-塩バター　　　　　個
-塩バターコーン　　個</div>
+商品名：
+個数：
+
+商品名：
+個数：
+
+商品名：
+個数：
+
+※「今週のラインナップ」からお選びください。</div>
   </div>
 
   <div class="small">Around The Bend</div>
@@ -521,12 +585,33 @@ h1{
 <script>
 function copyTemplate(){
   const text = document.getElementById("template").innerText;
-  navigator.clipboard.writeText(text).then(function(){
-    document.getElementById("message").style.display = "block";
-  }).catch(function(){
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(showCopied).catch(fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
+}
+function showCopied(){
+  document.getElementById("message").style.display = "block";
+}
+function fallbackCopy(){
+  const text = document.getElementById("template").innerText;
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.style.position = "fixed";
+  area.style.opacity = "0";
+  document.body.appendChild(area);
+  area.focus();
+  area.select();
+  try{
+    document.execCommand("copy");
+    showCopied();
+  }catch(e){
     alert("コピーできませんでした。下のテンプレートを長押ししてコピーしてください。");
-  });
+  }
+  document.body.removeChild(area);
 }
 </script>
+
 </body>
 </html>
